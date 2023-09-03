@@ -1,0 +1,22 @@
+{
+  "name": "wasm-emcc-samples",
+  "version": "0.0.0",
+  "description": "web assembly samples",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dsathyakumar/wasm-emcc-samples.git"
+  },
+  "keywords": [
+    "wasm"
+  ],
+  "author": "dsathyakumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dsathyakumar/wasm-emcc-samples/issues"
+  },
+  "homepage": "https://github.com/dsathyakumar/wasm-emcc-samples#readme"
+}
