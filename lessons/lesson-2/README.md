@@ -23,3 +23,20 @@ Besides this, an `instance` can therefore be thought of a module with **state**.
 
 ### WHat does the JS Web Assembly API offer ?
 It provides dev's with the ability to create `modules`, `memory`, `tables` and `instances`. When a webassembly instance is given, JS code can **synchronously** call its exports, which are now exposed as normal JS functions. Arbitrary JS functions can also be called **synchronously** by Web assembly code, by passing in those JS functions as imports to the web assembly instance. 
+
+### Step 2
+- Adds a `getNumber` function and can be accessed as 
+
+```js
+wasm.instance.exports.getNumber()
+// logs the output
+```
+- Next we add a function that can take an input and double it
+- Add a `getDoubleNumber` function in the `main.c` file
+- Go back to wasm fiddle and compile it, download the wasm file and put it back here.
+- We can access this new function again as 
+
+```js
+wasm.instance.exports.getDoubleNumber(2)
+// outputs 4
+```
