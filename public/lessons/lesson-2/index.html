@@ -15,6 +15,8 @@
                 console.log(window.wasm);
                 console.log(window.wasm.instance.exports.main());
                 console.log(window.wasm.instance.exports.getNumber());
+                console.log('viewing the exports on the module via WebAssembly.Module.exports');
+                console.log(WebAssembly.Module.exports(wasm.module));
             });
             
         </script>

@@ -7,7 +7,7 @@ Allocate to the window object
 window.wasm = wasm;
 ```
 Expanding this object on the window, you will notice there are 2 props
-- `module`: the actual wasm module itself. It represents a web assembly binary that has been compiled by the browser into executable machine code. A module is **stateless** & therefore can be shared between `window` and `workers` (via `postMessage` api). A module declares `imports` and `exports` just like any other ES Module. Note that the `module` does not have a `table`, `memory` etc.,
+- `module`: the actual wasm module itself. It represents a web assembly binary that has been compiled by the browser into executable machine code. A module is **stateless** & therefore can be shared between `window` and `workers` (via `postMessage` api). A module declares `imports` and `exports` just like any other ES Module. Note that the `module` does not have a `table`, `memory` etc., Note that exported funcs in the `exports` prop of `module` are not callable. But we can still inspect them. They are callable only on the `instance`.
 
 - `instance`: the current instance of the wasm module. This is what we are interested in durng app runtime. This has the `exports` prop => all exported obj of this module for this instance. in our case we are exporting the `main` method. So it can be accessed as"
 
