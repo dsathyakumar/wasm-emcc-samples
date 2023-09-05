@@ -23,6 +23,7 @@
                 // console.log('viewing the exports on the module via WebAssembly.Module.exports');
                 // console.log(WebAssembly.Module.exports(wasm.module));
                 window.wasm.instance.exports.getDoubleNumber(2);
+                console.log(WebAssembly.Module.imports(wasm.module));
             });
             
         </script>

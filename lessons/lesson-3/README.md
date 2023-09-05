@@ -15,3 +15,6 @@
 - Now we use the function `consoleLog` as if it were available in the C world.
 - Re-compile, generate the wasm file and use it now.
 - Values are logged to the browser console & they internally use the `console.log`
+
+### Step 3: Viewing the imports
+- Like how we viewed the `exports` via the `WebAssembly.module.exports(wasm.module)`, we can also view the `imports` via the `WebAssembly.module.imports(wasm.module)`.
