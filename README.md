@@ -2,6 +2,10 @@
 
 > This is a sample course to learn the basics of web assembly & employs the emscripten toolset for advanced examples & the sample project. This uses wasm compiled from C. This does not use Rust.
 
+## Accessing the demos
+The demos are available under the `/public` folder. They can be accessed as:
+`http://localhost:3333/lessons/lesson-3/` and so on.
+
 ## Introduction
 
 ### What is web assembly?
