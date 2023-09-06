@@ -18,3 +18,14 @@
 
 ### Step 3: Viewing the imports
 - Like how we viewed the `exports` via the `WebAssembly.module.exports(wasm.module)`, we can also view the `imports` via the `WebAssembly.module.imports(wasm.module)`.
+
+### Step 4: So far we have been accessing numbers. Floats are similar. But What about Strings?
+- Lets update the code to use `numLog` to log numbers and `strLog` to log characters.
+- Notice that the earlier methods are all `void` return type now, as we are logging the output and not returning anthing.
+- In the func header, notice the 
+```js
+void strLog(char * x);
+```
+The `char *` is indicative of a character pointer. What a pointer is that, its not going to hold the actual string , but, rather a pointer to a location (it points to & so has the value of that) in memory, where the string is stored. So its basically telling us, **_where to go read the value, rather than the actual value itself._**
+- we update the code a lil but, fixing the return type for the `main` method which returns an integer => 42 now and has a return type `int` as main method in C must return an int.
+- We are able to log everything. But notice, the output is not the string we were tring to log, but some arbitrary integer. Why? This is because, what is logged is the memory location where the strin / char is stored.
