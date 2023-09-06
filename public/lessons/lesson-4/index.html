@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Web Assembly Demo</title>
+    </head>
+    <body>
+        <h1>Web Assembly Demo</h1>
+        <script>
+            // Reads a string from Web Assembly instance's memory
+            // args are offset & length
+            function readTextMessage(offset, length) {
+                console.log('readTextMessage', offset, length);
+                // its an 8bit array of integers
+                // They can hold a piece of data from the ArrayBuffer
+                // and allow access to it.
+                const stringBuf = new Uint8Array(window.wasm.instance.exports.memory.buffer, offset, length);
+                // stringBuf is the exact data from our webassembly moudle, containing the string
+                // decode the data to text, using the TextDecoder API
+                const string = new TextDecoder().decode(stringBuf);
+                console.log(string);
+            }
+            const imports = {
+                env: {
+                    numLog: console.log,
+                    strLog: readTextMessage,
+                    consoleLog: console.log
+                }
+            }
+            WebAssembly.instantiateStreaming(fetch('/lessons/lesson-4/program.wasm'), imports)
+            .then(wasm => {
+                console.log('WASM ready!!');
+                // just assigning it to the global scope to inspect
+                window.wasm = wasm;
+                console.log(window.wasm);
+                // window.wasm.instance.exports.main();
+                // window.wasm.instance.exports.getNumber();
+                // console.log('viewing the exports on the module via WebAssembly.Module.exports');
+                // console.log(WebAssembly.Module.exports(wasm.module));
+                // window.wasm.instance.exports.getDoubleNumber(2);
+                window.wasm.instance.exports.greet();
+                // console.log(WebAssembly.Module.imports(wasm.module));
+            })
+            .catch(e => console.error(e));
+            
+        </script>
+    </body>
+</html>

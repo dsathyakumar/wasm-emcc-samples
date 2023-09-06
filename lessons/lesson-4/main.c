@@ -1,5 +1,7 @@
+#include <string.h>
+
 void consoleLog(int x);
-void strLog(char * msg);
+void strLog(char * offset, int length);
 void numLog(int x);
 
 int main() {
@@ -15,5 +17,6 @@ void getDoubleNumber(int x) {
 }
 
 void greet() {
-  strLog('Im a robot in the world');
+  char * msg = "Hello from C";
+  strLog(msg, strlen(msg));
 }
