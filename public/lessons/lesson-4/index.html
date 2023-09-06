@@ -19,7 +19,11 @@
                 // decode the data to text, using the TextDecoder API
                 const string = new TextDecoder().decode(stringBuf);
                 console.log(string);
+                window.dispatchEvent(new CustomEvent('wasmValue', {
+                    detail: string
+                }));
             }
+            window.addEventListener('wasmValue', evt => console.log(evt.detail));
             const imports = {
                 env: {
                     numLog: console.log,
