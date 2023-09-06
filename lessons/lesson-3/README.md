@@ -29,3 +29,4 @@ void strLog(char * x);
 The `char *` is indicative of a character pointer. What a pointer is that, its not going to hold the actual string , but, rather a pointer to a location (it points to & so has the value of that) in memory, where the string is stored. So its basically telling us, **_where to go read the value, rather than the actual value itself._**
 - we update the code a lil but, fixing the return type for the `main` method which returns an integer => 42 now and has a return type `int` as main method in C must return an int.
 - We are able to log everything. But notice, the output is not the string we were tring to log, but some arbitrary integer. Why? This is because, what is logged is the memory location where the strin / char is stored.
+- In Lesson 4, lets see how we can actually read that string from that location.
